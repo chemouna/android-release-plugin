@@ -11,8 +11,8 @@ class ReleaseProcessExtension {
 
     String appVersion
 
-    String mailSenderUsername
-    String mailSenderPassword
-    String mailDestination
+    String senderUsername
+    String senderPassword
+    String destination
 
 }
