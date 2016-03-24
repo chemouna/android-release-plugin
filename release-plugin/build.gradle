@@ -1,0 +1,31 @@
+
+group 'com.mounacheikhna.release'
+version '0.1'
+
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+configurations { antClasspath }
+
+dependencies {
+    antClasspath 'ant:ant-javamail:1.6.5'
+    antClasspath 'javax.activation:activation:1.1.1'
+    antClasspath 'javax.mail:mail:1.4.7'
+
+    compile gradleApi()
+    compile localGroovy()
+    compile "com.android.tools.build:gradle:1.5.0"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+ClassLoader antClassLoader = org.apache.tools.ant.Project.class.classLoader
+configurations.antClasspath.each { File jar ->
+    println "Adding to ant classpath : " + jar.absolutePath
+    antClassLoader.addURL(jar.toURI().toURL())
+}
+
+
