@@ -14,7 +14,6 @@ class ExecWait extends DefaultTask {
 
     @TaskAction
     def spawnProcess() {
-
         ProcessBuilder builder = new ProcessBuilder(command.split(separator))
         builder.redirectErrorStream(true)
         builder.directory(new File(directory))

@@ -31,7 +31,7 @@ class SendMailTask extends DefaultTask implements SendMailSpec {
         println 'Mail Sending Start..'
 
         ant.mail(mailParams) {
-            from(address: 'my-email')
+            from(address: senderMail)
             to(address: destination) //TODO: test with a list of destination
             message(body)
         }

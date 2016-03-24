@@ -22,5 +22,5 @@ sudo pip install jira-cli
     username: johndoe
     password: *******
     would you like to persist the credentials to ~/.jira_cli/config.cfg?
-    [WARNING: this will store credentials in plaintext [y/n]:y
+    [WARNING: this will store credentials in plaintext& [y/n]:y
 ``` 
